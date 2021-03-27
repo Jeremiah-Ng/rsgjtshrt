@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0);
+        }
+
+        .overlay {
+            height: 0%;
+            width: 100%;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: rgb(255, 255, 255);
+            overflow-y: hidden;
+            transition: 0.5s;
+        }
+
+        .overlay-content {
+            position: relative;
+            top: 25%;
+            width: 100%;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .overlay a {
+            padding: 8px;
+            text-decoration: none;
+            font-size: 36px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .overlay a:hover,
+        .overlay a:focus {
+            color: #f1f1f1;
+        }
+
+        .overlay .closebtn {
+            position: absolute;
+            top: 20px;
+            right: 45px;
+            font-size: 60px;
+        }
+
+        @media screen and (max-height: 450px) {
+            .overlay {
+                overflow-y: auto;
+            }
+
+            .overlay a {
+                font-size: 20px
+            }
+
+            .overlay .closebtn {
+                font-size: 40px;
+                top: 15px;
+                right: 35px;
+            }
+        }
+
+        .overlay1 {
+            height: 0%;
+            width: 100%;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.9);
+            overflow-y: hidden;
+            transition: 0.5s;
+        }
+
+        .overlay-content {
+            position: relative;
+            top: 25%;
+            width: 100%;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .overlay1 a {
+            padding: 8px;
+            text-decoration: none;
+            font-size: 36px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .overlay1 a:hover,
+        .overlay1 a:focus {
+            color: #f1f1f1;
+        }
+
+        .overlay1 .closebtn {
+            position: absolute;
+            top: 20px;
+            right: 45px;
+            font-size: 60px;
+        }
+
+        @media screen and (max-height: 450px) {
+            .overlay1 {
+                overflow-y: auto;
+            }
+
+            .overlay1 a {
+                font-size: 20px
+            }
+
+            .overlay1 .closebtn {
+                font-size: 40px;
+                top: 15px;
+                right: 35px;
+            }
+        }
+
+        #waiting {
+            height: 20px;
+        }
+
+        #extramilelol {
+            margin-top: 250px;
+        }
+
+        #lols,
+        #extramilelol1 {
+            margin-top: 250px;
+            display: inline
+        }
+
+        #start {
+            background-color: forestgreen;
+            width: 250px;
+            border-radius: 50px;
+        }
+
+        #noice {
+            background-color: gray;
+            height: 550px;
+            width: 500px;
+            overflow-y: auto!important;
+            margin-top: 10px
+        }
+
+        .stop {
+            width: 100px;
+        }
+ #overlay {
+            position: fixed;
+            display: none;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 2;
+            cursor: pointer;
+        }
+        #helpme {
+            margin-top: 250px;
+            background-color: white;
+            border-radius: 25px;
+            width: 500px;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            cursor: default;
+        }
+
+        #no {
+            background-color: crimson;
+            border-radius: 50px;
+            width: 75px;
+            height: 25px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        #yes {
+            background-color: limegreen;
+            border-radius: 50px;
+            width: 75px;
+            height: 25px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        #create{
+            width: 310px;
+            margin: auto;
+        }
+        #logout {
+            width: 100px;
+            margin: auto;
+        }
+#poggers {
+            margin-top: 10px;
+            margin-left: 10px;
+            position: absolute;
+        }
+        .user_tick{
+            width: 10px;
+        }
+        .noice{
+            background-color: gray;
+            margin-top: 50px;
+            height: 300px;
+            padding-top: 30px;
+        }
+        #absolute{
+            position: absolute;
+            background-color: gray;
+            width: 483px;
+        }
+        #E{
+            border-radius: 5px;
+            width: 500px!important;
+        }
+        #style{
+            background-color:green;
+            border-radius: 5px;
+            width: 100px;
+            height: 25px;
+        }
+    </style>
+</head>
+<title>Sign Up</title>
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
+
+<body onload="setTimeout(openNav, 3000);">
+    <div>
+        <center>
+            <h3 id="extramilelol" style="color:white">Loading.</h3>
+            <img id="waiting" src="eee.gif">
+        </center>
+    </div>
+    <div id="myNav" class="overlay">
+       <span style="font-size:30px;cursor:pointer" onclick="openNav1()" id="poggers">&#9776;</span>
+        <center>
+            <h1 id="welcome"></h1>
+            <div id="noice">
+                <div id="absolute">
+                    <center>
+                <h1>Latest Posts</h1>
+                    </center>
+                </div>
+                <br><br><br><br><br>
+                    <div id="output">
+                
+                </div>
+            </div>
+            	<div class="noice">
+		<label>Send:</label>
+                    <br><br>
+		<input style="width: 1500px;" type="text" class="form-control" placeholder="Enter Message" maxlength="100" id="E">
+                    <br><br>
+		<button class="btn btn-success" onclick="nosend()" id="style">Send</button>
+		<br><br><br>
+	</div>
+        </center>
+    </div>
+   <div id="myNav1" class="overlay1">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav1()">&times;</a>
+        <div class="overlay-content">
+            <a href="#creation" id="create" onclick="stop()">Go Back to Rooms</a>
+            <a onclick="on()" id="logout" style="cursor: pointer">Logout</a>
+            <div id="overlay">
+                <center>
+                    <div id="helpme">
+                        <h3>Are You Sure You Want to Log Out?</h3><button id="no" onclick="off()">No</button>&nbsp;&nbsp;&nbsp;&nbsp;<button id="yes" onclick="logout()">Yes</button>
+                    </div>
+                </center>
+            </div>
+        </div>
+    </div>
+    <script>
+        var firebaseConfig = {
+    apiKey: "AIzaSyCtZ87ZysvhzqR7wu1E8XfVX_kb2GDSoi0",
+    authDomain: "whyamidoingsomuch.firebaseapp.com",
+    databaseURL: "https://whyamidoingsomuch-default-rtdb.firebaseio.com",
+    projectId: "whyamidoingsomuch",
+    storageBucket: "whyamidoingsomuch.appspot.com",
+    messagingSenderId: "914590911311",
+    appId: "1:914590911311:web:494d2392e9f4937b8c533a"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+    var rmname=localStorage.getItem("room_name");
+    var username=localStorage.getItem("username");
+function getData1() { console.log(rmname)
+; firebase.database().ref("/"+rmname).on('value', function(snapshot) { document.getElementById("output").innerHTML = ""; snapshot.forEach(function(childSnapshot) { childKey  = childSnapshot.key; childData = childSnapshot.val(); if(childKey != "purpose") {
+      firebase_message_id = childKey;
+         message_data = childData;
+//Start code
+console.log("e")
+name=message_data['name'];
+message=message_data['msg'];
+like=message_data['like'];
+n="<h4>"+name+"<img src='tick.png' class='user_tick'></h4>"
+m="<h4 class='message_h4'>"+message+"</h4>"
+b="<button class='btn btn-warning' id='"+firebase_message_id+"' value='"+like+"' onclick='like1(this.id)'><span class='glyphicon glyphicon-thumbs-up'></span>Like: "+like+"</button><hr>"
+document.getElementById("output").innerHTML+=n+m+b;
+//End code
+      } });  }); }
+      getData1();
+ function nosend(){
+      console.log(rmname);
+      console.log(username);
+      var msg=document.getElementById("E").value;
+     if(msg.length!=0){
+      firebase.database().ref(rmname).push({
+            name:username,
+            msg:msg,
+            like:0
+      })
+      document.getElementById("E").value=""
+}}
+
+        var text = ["Loading..", "Loading...", "Loading."];
+        var counter = 0;
+        var elem = document.getElementById("extramilelol");
+        var inst = setInterval(change, 1000);
+
+        function change() {
+            elem.innerHTML = text[counter];
+            counter++;
+            if (counter >= text.length) {
+                counter = 0;
+            }
+        }
+        var room_name=localStorage.getItem("room_name")
+document.getElementById("welcome").innerHTML="Welcome to room "+room_name;
+        var player2;
+        function wait() {
+             var username = document.getElementById("user").value;
+            if(username.length!=0){
+                     document.getElementById("myNav1").style.height = "100%";
+            setTimeout(e, 16000);
+                localStorage.setItem("username", username);
+            }
+            else{
+                document.getElementById("user").placeholder="Type Name to Continue"
+            }
+        }
+        function e() {
+            location.replace("index4.html")
+        }
+
+        function openNav() {
+            document.getElementById("myNav").style.height = "100%";
+        }
+
+       
+ function logout() {
+            location.replace("Login.html")
+        }
+         function openNav1() {
+            document.getElementById("myNav1").style.height = "100%";
+        }
+
+        function on() {
+            document.getElementById("overlay").style.display = "block";
+        }
+
+        function off() {
+            document.getElementById("overlay").style.display = "none";
+        }
+         function closeNav1() {
+            document.getElementById("myNav1").style.height = "0%";
+        }
+        function stop(){
+            location.replace("index4.html")
+        }
+        function like1(name){
+      like=document.getElementById(name).value;
+      like=Number(like)+1;
+      firebase.database().ref(rmname).child(name).update({
+            like:like
+      })
+}
+    </script>
+
+</body>
+
+</html>
